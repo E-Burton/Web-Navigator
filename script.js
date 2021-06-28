@@ -14,25 +14,25 @@ function showCurrentPage(action) {
 }
 
 function newPage(page) {
-  console.log(`I'm in the new page function!`)
+  // console.log(`I'm in the new page function!`)
   backPages.push(currentPage);
   currentPage = page;
   while (nextPages.size > 0) {
-    console.log(`I'm in the while function!`);
+    // console.log(`I'm in the while function!`);
     nextPages.pop();
   }
   showCurrentPage('New Page');
 }
 
 function backPage() {
-  console.log(`I'm in the back pages function!`)
+  // console.log(`I'm in the back pages function!`)
   nextPages.push(currentPage);
   currentPage = backPages.pop();
   showCurrentPage('Back');
 }
 
 function nextPage() {
-  console.log(`I'm in the next pages function!`)
+  // console.log(`I'm in the next pages function!`)
   backPages.push(currentPage);
   currentPage = nextPages.pop();
   showCurrentPage('Next')
