@@ -45,7 +45,30 @@ const question = 'Where would you like to go today? '
 // ------------------------------
 // User Interface Part 1
 // ------------------------------
+let finish = false;
+let showBack = false;
+let showNext = false;
 
+showCurrentPage('Start Page');
+
+while (!finish) {
+  const instructions = baseInfo;
+  if (!backPages.isEmpty()) {
+    instructions += `, ${backInfo}`;
+    showBack = true;
+  } else {
+    showBack = false;
+  }
+  if (!nextPages.isEmpty()) {
+    instructions += `, ${nextInfo}`
+    showNext = true;
+  } else {
+    showNext = false;
+  }
+  
+  instructions += `, ${quitInfo}`;
+  console.log(instructions);
+  }
   // ------------------------------
   // User Interface Part 2
   // ------------------------------
