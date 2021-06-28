@@ -3,11 +3,36 @@ const prompt = require('prompt-sync')();
 // ------------------------------
 // Initialization
 // ------------------------------
-
+const backPages = new Stack();
+const nextPages = new Stack();
+let currentPage = null;
 // ------------------------------
 // Helper Functions
 // ------------------------------
+function showCurrentPage(action) {
+  console.log(`User input: ${action} \n Current Page: ${currentPage} \n Top Back Page: ${backPages.head} \n Top Next Page: ${nextPages.head}`);
+}
 
+function newPage(page) {
+  backPages.push(currentPage);
+  currentPage = page;
+  while (nextPages !== null) {
+    nextPages.pop();
+  }
+  showCurrentPage();
+}
+
+function backPage() {
+  nextPage.push(currentPage);
+  currentPage = backPages.pop();
+  showCurrentPage('Back');
+}
+
+function nextPage() {
+  backPages.push(currentPage);
+  currentPage = nextPages.pop();
+  showCurrentPage('Next')
+}
 /*
  * The following strings are used to prompt the user
  */
