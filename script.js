@@ -72,3 +72,23 @@ while (!finish) {
   // ------------------------------
   // User Interface Part 2
   // ------------------------------
+  const answer = prompt(question);
+  const lowerCaseAnswer = answer.toLower();
+  
+  if(lowerCaseAnswer !== b || lowerCaseAnswer !== n || lowerCaseAnswer !== q) {
+    newPage(answer);
+  } else if (lowerCaseAnswer === b) {
+    if (showBack) {
+      backPage();
+    } else {
+      console.log("Sorry, there is no previous page to visit.");
+    }
+  } else if (lowerCaseAnswer === n) {
+    if (showNext) {
+      nextPage();
+    } else {
+      console.log("Sorry, there is no next page to visit.")
+    }
+  } else if (lowerCaseAnswer === q) {
+    finish = true;
+  }
