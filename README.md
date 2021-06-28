@@ -3,7 +3,7 @@ Simulates the navigational operations of a web browser, such as opening a new pa
 
 ## Table of Contents
 * [Tools Implemented](#tools-implemented)
-* [Installation](#installation)
+* [Installation & Usage](#installation--usage)
 * [Video of Application](#video-of-application)
 * [Credits](#credits)
 
@@ -12,9 +12,10 @@ Simulates the navigational operations of a web browser, such as opening a new pa
 * Node.js
 * `prompt-syn npm`
 
-## Installation
+## Installation & Usage
 
-`npm install`
+`npm install`  
+`node script.js`
 
 ## Video of Application
 
